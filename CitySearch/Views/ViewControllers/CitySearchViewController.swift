@@ -88,7 +88,8 @@ class CitySearchViewController: UIViewController {
     }
 
     @objc private func gpsButtonTapped() {
-        print("GPS button tapped")
+        let mapVC = MapViewController()
+        navigationController?.pushViewController(mapVC, animated: true)
     }
 
     @objc private func searchButtonTapped() {
