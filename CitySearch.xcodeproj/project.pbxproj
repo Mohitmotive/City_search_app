@@ -29,6 +29,16 @@
 		B0286FBD2D3EACFD00791335 /* CitySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B0EC7A842D3F9FF800151773 /* Exceptions for "CitySearch" folder in "CitySearch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B0286F9C2D3EACFC00791335 /* CitySearch */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B0286FB62D3EACFD00791335 /* CitySearchTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -42,6 +52,9 @@
 		};
 		B0EC7A7D2D3F9FF800151773 /* CitySearch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B0EC7A842D3F9FF800151773 /* Exceptions for "CitySearch" folder in "CitySearch" target */,
+			);
 			path = CitySearch;
 			sourceTree = "<group>";
 		};
