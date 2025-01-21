@@ -29,25 +29,7 @@
 		B0286FBD2D3EACFD00791335 /* CitySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B0286FC52D3EACFD00791335 /* Exceptions for "CitySearch" folder in "CitySearch" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = B0286F9C2D3EACFC00791335 /* CitySearch */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B0286F9F2D3EACFC00791335 /* CitySearch */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				B0286FC52D3EACFD00791335 /* Exceptions for "CitySearch" folder in "CitySearch" target */,
-			);
-			path = CitySearch;
-			sourceTree = "<group>";
-		};
 		B0286FB62D3EACFD00791335 /* CitySearchTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CitySearchTests;
@@ -56,6 +38,11 @@
 		B0286FC02D3EACFD00791335 /* CitySearchUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CitySearchUITests;
+			sourceTree = "<group>";
+		};
+		B0EC7A7D2D3F9FF800151773 /* CitySearch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CitySearch;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,7 +75,7 @@
 		B0286F942D3EACFC00791335 = {
 			isa = PBXGroup;
 			children = (
-				B0286F9F2D3EACFC00791335 /* CitySearch */,
+				B0EC7A7D2D3F9FF800151773 /* CitySearch */,
 				B0286FB62D3EACFD00791335 /* CitySearchTests */,
 				B0286FC02D3EACFD00791335 /* CitySearchUITests */,
 				B0286F9E2D3EACFC00791335 /* Products */,
@@ -121,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B0286F9F2D3EACFC00791335 /* CitySearch */,
+				B0EC7A7D2D3F9FF800151773 /* CitySearch */,
 			);
 			name = CitySearch;
 			packageProductDependencies = (
