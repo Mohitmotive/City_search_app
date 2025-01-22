@@ -7,6 +7,8 @@
 
 import Foundation
 
+//commit
+
 class NetworkController {
     static func fetchCities(query: String, completion: @escaping (Result<[City], Error>) -> Void) {
         let urlString = "https://secure.geonames.org/searchJSON?name_startsWith=\(query)&maxRows=10&username=keep_truckin"
