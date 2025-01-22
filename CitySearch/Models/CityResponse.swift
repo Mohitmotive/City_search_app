@@ -7,6 +7,10 @@
 import Foundation
 
 struct CityResponse: Codable {
-    let geonames: [City]
+    let geoNames: [City]
+
+    enum CodingKeys: String, CodingKey {
+        case geoNames = "geonames"
+    }
 }
 
