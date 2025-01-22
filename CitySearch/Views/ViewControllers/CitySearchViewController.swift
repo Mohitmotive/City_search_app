@@ -1,28 +1,15 @@
 import UIKit
 
 class CitySearchViewController: UIViewController {
-    private let searchBarContainer: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .clear
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        return containerView
-    }()
-
+    private let viewModel = CitySearchViewModel()
+    
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search cities"
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
-
-    private let gpsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "1.png"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(gpsButtonTapped), for: .touchUpInside)
-        return button
-    }()
-
+    
     private let searchButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Search", for: .normal)
@@ -33,27 +20,66 @@ class CitySearchViewController: UIViewController {
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
-
+    
+    
+    private let gpsButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "1.png"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(gpsButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CityTableViewCell.self, forCellReuseIdentifier: "CityCell")
         return tableView
     }()
-
-    private var cityResults: [City] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "City Search"
-        setupNavigationBarAppearance()
         setupNavigationBar()
+        setupNavigationBarAppearance()
         setupUI()
-
+        setupBindings()
+    }
+    
+    private func setupUI() {
+        title = "City Search"
+        view.backgroundColor = .white
+        view.addSubview(searchBar)
+        view.addSubview(tableView)
+        view.addSubview(gpsButton)
+        view.addSubview(searchButton)
+        
         searchBar.delegate = self
         tableView.dataSource = self
-        tableView.delegate = self
+        
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                        
+            // GPS Button
+            gpsButton.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -8),
+            gpsButton.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
+            gpsButton.widthAnchor.constraint(equalToConstant: 30),
+            gpsButton.heightAnchor.constraint(equalToConstant: 30),
+                        
+            // Search Button
+            
+            searchButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
+            searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            searchButton.widthAnchor.constraint(equalToConstant: 150),
+            searchButton.heightAnchor.constraint(equalToConstant: 44),
+                        
+            // Table View
+            tableView.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     private func setupNavigationBarAppearance() {
@@ -77,98 +103,59 @@ class CitySearchViewController: UIViewController {
             }
             navigationController?.navigationBar.tintColor = .white
         }
-
-    private func setupNavigationBar() {
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
-    }
-
-    @objc private func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    }
-
     @objc private func gpsButtonTapped() {
         let mapVC = MapViewController()
         navigationController?.pushViewController(mapVC, animated: true)
     }
-
+    
     @objc private func searchButtonTapped() {
-        guard let query = searchBar.text, !query.isEmpty else { return }
-        fetchCities(query: query)
+        guard let query = searchBar.text, !query.isEmpty else {
+            viewModel.resetToDummyData()
+            return }
+        viewModel.fetchCities(query: query)
     }
-
-    private func setupUI() {
-        view.addSubview(searchBarContainer)
-        searchBarContainer.addSubview(searchBar)
-        searchBarContainer.addSubview(gpsButton)
-        view.addSubview(searchButton)
-        view.addSubview(tableView)
-
-        NSLayoutConstraint.activate([
-            // Search Bar Container
-            searchBarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBarContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            searchBarContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            searchBarContainer.heightAnchor.constraint(equalToConstant: 44),
-
-            // Search Bar
-            searchBar.leadingAnchor.constraint(equalTo: searchBarContainer.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: gpsButton.leadingAnchor, constant: -8),
-            searchBar.topAnchor.constraint(equalTo: searchBarContainer.topAnchor),
-            searchBar.bottomAnchor.constraint(equalTo: searchBarContainer.bottomAnchor),
-
-            // GPS Button
-            gpsButton.trailingAnchor.constraint(equalTo: searchBarContainer.trailingAnchor),
-            gpsButton.centerYAnchor.constraint(equalTo: searchBarContainer.centerYAnchor),
-            gpsButton.widthAnchor.constraint(equalToConstant: 30),
-            gpsButton.heightAnchor.constraint(equalToConstant: 30),
-
-            // Search Button
-            searchButton.topAnchor.constraint(equalTo: searchBarContainer.bottomAnchor, constant: 16),
-            searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            searchButton.widthAnchor.constraint(equalToConstant: 100),
-            searchButton.heightAnchor.constraint(equalToConstant: 44),
-
-            // Table View
-            tableView.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+    
+    
+    @objc private func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
-
-    private func fetchCities(query: String) {
-        NetworkController.fetchCities(query: query) { [weak self] result in
-            switch result {
-            case .success(let cities):
-                self?.cityResults = cities
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
+    
+    private func setupNavigationBar() {
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    private func setupBindings() {
+        viewModel.onCitiesUpdated = { [weak self] in
+            self?.tableView.reloadData()
         }
+        
+        viewModel.onError = { errorMessage in
+            print("Error: \(errorMessage)")
+        }
+    }
+}
+
+extension CitySearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.cityCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityTableViewCell else {
+            return UITableViewCell()
+        }
+        let city = viewModel.city(at: indexPath.row)
+        cell.configure(with: city)
+        return cell
     }
 }
 
 extension CitySearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text, !query.isEmpty else { return }
-        fetchCities(query: query)
-    }
-}
-
-extension CitySearchViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityResults.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.configure(with: cityResults[indexPath.row])
-        return cell
+        guard let query = searchBar.text, !query.isEmpty else {
+            viewModel.resetToDummyData()
+            return }
+        viewModel.fetchCities(query: query)
     }
 }
