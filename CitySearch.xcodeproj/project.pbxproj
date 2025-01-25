@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		545A79768D033647EA19219A /* Pods_CitySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B753637B531AF2DE282829 /* Pods_CitySearch.framework */; };
+		9AA2DA22E435069E0133C8F9 /* Pods_CitySearch_CitySearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B3F94E641C38633067DBA4 /* Pods_CitySearch_CitySearchUITests.framework */; };
+		A6D1D5DBBDF7A8696E96FB71 /* Pods_CitySearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FA427E6A709A57D7637D99 /* Pods_CitySearchTests.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B0286FB42D3EACFD00791335 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31FA427E6A709A57D7637D99 /* Pods_CitySearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B753637B531AF2DE282829 /* Pods_CitySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53E9E8ACDD322245D8A38526 /* Pods-CitySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearch.debug.xcconfig"; path = "Target Support Files/Pods-CitySearch/Pods-CitySearch.debug.xcconfig"; sourceTree = "<group>"; };
+		87AD6AD37B5EF809914937A1 /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearch-CitySearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91EFAA755B205DF2D083A703 /* Pods-CitySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearch.release.xcconfig"; path = "Target Support Files/Pods-CitySearch/Pods-CitySearch.release.xcconfig"; sourceTree = "<group>"; };
+		9D778F4A3E430FB674F97949 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearch-CitySearchUITests.release.xcconfig"; path = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AA7A48FC3CA6CA581F2E012D /* Pods-CitySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearchTests.debug.xcconfig"; path = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0286F9D2D3EACFC00791335 /* CitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0286FB32D3EACFD00791335 /* CitySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0286FBD2D3EACFD00791335 /* CitySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B3F94E641C38633067DBA4 /* Pods_CitySearch_CitySearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitySearch_CitySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91C2B5C88A36C00071E15D3 /* Pods-CitySearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySearchTests.release.xcconfig"; path = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545A79768D033647EA19219A /* Pods_CitySearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D1D5DBBDF7A8696E96FB71 /* Pods_CitySearchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA2DA22E435069E0133C8F9 /* Pods_CitySearch_CitySearchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F08824F0FCD9B74ED1C6EE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53E9E8ACDD322245D8A38526 /* Pods-CitySearch.debug.xcconfig */,
+				91EFAA755B205DF2D083A703 /* Pods-CitySearch.release.xcconfig */,
+				87AD6AD37B5EF809914937A1 /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */,
+				9D778F4A3E430FB674F97949 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */,
+				AA7A48FC3CA6CA581F2E012D /* Pods-CitySearchTests.debug.xcconfig */,
+				B91C2B5C88A36C00071E15D3 /* Pods-CitySearchTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A02B15AA8D7CFA4BAB88B201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B753637B531AF2DE282829 /* Pods_CitySearch.framework */,
+				B6B3F94E641C38633067DBA4 /* Pods_CitySearch_CitySearchUITests.framework */,
+				31FA427E6A709A57D7637D99 /* Pods_CitySearchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0286F942D3EACFC00791335 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +133,8 @@
 				B0286FB62D3EACFD00791335 /* CitySearchTests */,
 				B0286FC02D3EACFD00791335 /* CitySearchUITests */,
 				B0286F9E2D3EACFC00791335 /* Products */,
+				1F08824F0FCD9B74ED1C6EE0 /* Pods */,
+				A02B15AA8D7CFA4BAB88B201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0286FC62D3EACFD00791335 /* Build configuration list for PBXNativeTarget "CitySearch" */;
 			buildPhases = (
+				4A3C7AB28EF00EC3AD5E628A /* [CP] Check Pods Manifest.lock */,
 				B0286F992D3EACFC00791335 /* Sources */,
 				B0286F9A2D3EACFC00791335 /* Frameworks */,
 				B0286F9B2D3EACFC00791335 /* Resources */,
+				549DA1CCF01FBB22371F5F35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,8 +169,6 @@
 				B0EC7A7D2D3F9FF800151773 /* CitySearch */,
 			);
 			name = CitySearch;
-			packageProductDependencies = (
-			);
 			productName = CitySearch;
 			productReference = B0286F9D2D3EACFC00791335 /* CitySearch.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0286FCB2D3EACFD00791335 /* Build configuration list for PBXNativeTarget "CitySearchTests" */;
 			buildPhases = (
+				0CCDB6628DD09A7C5E342D57 /* [CP] Check Pods Manifest.lock */,
 				B0286FAF2D3EACFD00791335 /* Sources */,
 				B0286FB02D3EACFD00791335 /* Frameworks */,
 				B0286FB12D3EACFD00791335 /* Resources */,
@@ -147,8 +191,6 @@
 				B0286FB62D3EACFD00791335 /* CitySearchTests */,
 			);
 			name = CitySearchTests;
-			packageProductDependencies = (
-			);
 			productName = CitySearchTests;
 			productReference = B0286FB32D3EACFD00791335 /* CitySearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0286FCE2D3EACFD00791335 /* Build configuration list for PBXNativeTarget "CitySearchUITests" */;
 			buildPhases = (
+				2DCF7B38A40E07BE120208D9 /* [CP] Check Pods Manifest.lock */,
 				B0286FB92D3EACFD00791335 /* Sources */,
 				B0286FBA2D3EACFD00791335 /* Frameworks */,
 				B0286FBB2D3EACFD00791335 /* Resources */,
+				5AD76CF953EF6DEAAA7F922E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,8 +214,6 @@
 				B0286FC02D3EACFD00791335 /* CitySearchUITests */,
 			);
 			name = CitySearchUITests;
-			packageProductDependencies = (
-			);
 			productName = CitySearchUITests;
 			productReference = B0286FBD2D3EACFD00791335 /* CitySearchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -208,6 +250,10 @@
 			);
 			mainGroup = B0286F942D3EACFC00791335;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B0EC7E892D44AF8500151773 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				B0EC7E8A2D44B8FA00151773 /* XCRemoteSwiftPackageReference "SwiftGif" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B0286F9E2D3EACFC00791335 /* Products */;
 			projectDirPath = "";
@@ -243,6 +289,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CCDB6628DD09A7C5E342D57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CitySearchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DCF7B38A40E07BE120208D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CitySearch-CitySearchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A3C7AB28EF00EC3AD5E628A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CitySearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		549DA1CCF01FBB22371F5F35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CitySearch/Pods-CitySearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CitySearch/Pods-CitySearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CitySearch/Pods-CitySearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AD76CF953EF6DEAAA7F922E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0286F992D3EACFC00791335 /* Sources */ = {
@@ -284,6 +433,7 @@
 /* Begin XCBuildConfiguration section */
 		B0286FC72D3EACFD00791335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53E9E8ACDD322245D8A38526 /* Pods-CitySearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +460,7 @@
 		};
 		B0286FC82D3EACFD00791335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91EFAA755B205DF2D083A703 /* Pods-CitySearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,7 +522,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,7 +585,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -455,6 +606,7 @@
 		};
 		B0286FCC2D3EACFD00791335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA7A48FC3CA6CA581F2E012D /* Pods-CitySearchTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -473,6 +625,7 @@
 		};
 		B0286FCD2D3EACFD00791335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B91C2B5C88A36C00071E15D3 /* Pods-CitySearchTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +644,7 @@
 		};
 		B0286FCF2D3EACFD00791335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87AD6AD37B5EF809914937A1 /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -507,6 +661,7 @@
 		};
 		B0286FD02D3EACFD00791335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D778F4A3E430FB674F97949 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -561,6 +716,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0EC7E892D44AF8500151773 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
+		B0EC7E8A2D44B8FA00151773 /* XCRemoteSwiftPackageReference "SwiftGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftgif/SwiftGif.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B0286F952D3EACFC00791335 /* Project object */;
 }

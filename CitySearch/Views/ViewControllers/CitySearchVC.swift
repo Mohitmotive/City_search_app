@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class CitySearchViewController: UIViewController {
     private let viewModel = CitySearchViewModel()
@@ -21,7 +22,6 @@ class CitySearchViewController: UIViewController {
         return button
     }()
     
-    
     private let gpsButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "1.png"), for: .normal)
@@ -43,6 +43,7 @@ class CitySearchViewController: UIViewController {
         setupNavigationBarAppearance()
         setupUI()
         setupBindings()
+        configureSVProgressHUD()
     }
     
     private func setupUI() {
@@ -55,26 +56,23 @@ class CitySearchViewController: UIViewController {
         
         searchBar.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                        
-            // GPS Button
+            
             gpsButton.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -8),
             gpsButton.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
             gpsButton.widthAnchor.constraint(equalToConstant: 30),
             gpsButton.heightAnchor.constraint(equalToConstant: 30),
-                        
-            // Search Button
             
             searchButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchButton.widthAnchor.constraint(equalToConstant: 150),
             searchButton.heightAnchor.constraint(equalToConstant: 44),
-                        
-            // Table View
+            
             tableView.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -83,41 +81,24 @@ class CitySearchViewController: UIViewController {
     }
     
     private func setupNavigationBarAppearance() {
-             if #available(iOS 13.0, *) {
-                let appearance = UINavigationBarAppearance()
-                appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = .systemTeal
-                appearance.titleTextAttributes = [
-                    .foregroundColor: UIColor.white,
-                    .font: UIFont.systemFont(ofSize: 20, weight: .bold)
-                ]
-                navigationController?.navigationBar.standardAppearance = appearance
-                navigationController?.navigationBar.scrollEdgeAppearance = appearance
-            } else {
-                
-                navigationController?.navigationBar.barTintColor = .systemTeal
-                navigationController?.navigationBar.titleTextAttributes = [
-                    .foregroundColor: UIColor.white,
-                    .font: UIFont.systemFont(ofSize: 20, weight: .bold)
-                ]
-            }
-            navigationController?.navigationBar.tintColor = .white
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .systemTeal
+            appearance.titleTextAttributes = [
+                .foregroundColor: UIColor.white,
+                .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+            ]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.barTintColor = .systemTeal
+            navigationController?.navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.white,
+                .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+            ]
         }
-    @objc private func gpsButtonTapped() {
-        let mapVC = MapViewController()
-        navigationController?.pushViewController(mapVC, animated: true)
-    }
-    
-    @objc private func searchButtonTapped() {
-        guard let query = searchBar.text, !query.isEmpty else {
-            viewModel.resetToDummyData()
-            return }
-        viewModel.fetchCities(query: query)
-    }
-    
-    
-    @objc private func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupNavigationBar() {
@@ -127,12 +108,49 @@ class CitySearchViewController: UIViewController {
     
     private func setupBindings() {
         viewModel.onCitiesUpdated = { [weak self] in
-            self?.tableView.reloadData()
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self?.tableView.reloadData()
+            }
         }
         
-        viewModel.onError = { errorMessage in
-            print("Error: \(errorMessage)")
+        viewModel.onError = { [weak self] errorMessage in
+            DispatchQueue.main.async {
+                SVProgressHUD.showError(withStatus: errorMessage)
+            }
         }
+    }
+    
+    private func configureSVProgressHUD() {
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.5)
+    }
+    
+    @objc private func gpsButtonTapped() {
+        let mapVC = MapViewController()
+        navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+    @objc private func searchButtonTapped() {
+        guard let query = searchBar.text, !query.isEmpty else {
+            viewModel.resetToDummyData()
+            return
+        }
+        SVProgressHUD.show(withStatus: "Searching...")
+        viewModel.fetchCities(query: query)
+    }
+    
+    @objc private func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CitySearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCity = viewModel.city(at: indexPath.row)
+        let detailVC = CityDetailPopupViewController(city: selectedCity)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -155,7 +173,9 @@ extension CitySearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, !query.isEmpty else {
             viewModel.resetToDummyData()
-            return }
+            return
+        }
+        SVProgressHUD.show(withStatus: "Searching...")
         viewModel.fetchCities(query: query)
     }
 }

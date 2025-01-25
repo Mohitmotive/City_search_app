@@ -23,7 +23,19 @@ final class MockNetworkServiceTests: XCTestCase {
     }
     
     func testFetchDataSuccess() {
-        let mockCityResponse = City(toponymName: "London", adminName1: "England", countryName: "United Kingdom")
+        let mockCityResponse = City(
+            geonameId: 12345,
+            toponymName: "London",
+            name: "London",
+            countryName: "United Kingdom",
+            countryCode: "GB",
+            adminName1: "England",
+            lat: "51.5074",
+            lng: "-0.1278",
+            population: 8908081,
+            fcodeName: "capital of a political entity"
+        )
+
         mockNetworkService.mockResponse = mockCityResponse
         
         let expectation = self.expectation(description: "Success response received")

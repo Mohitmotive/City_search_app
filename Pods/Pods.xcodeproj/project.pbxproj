@@ -1,0 +1,1044 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14F6602F47FF59347CB6807CE217EDC5 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4749FE60BF7849A18E381FF45A14525F /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		155AE15559320AFD4FBC863624FA4FEA /* Pods-CitySearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8300EFD955412274D262A16B471E7539 /* Pods-CitySearch-dummy.m */; };
+		1739C4B63D12177E58B7110F21E939EB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC3F5F72C111A28DAAD0A0340E157A66 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		517CF33F75EA768ED4B7F0F440F54A7E /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B2484203442C1A2A674DD77A7674E /* SVRadialGradientLayer.m */; };
+		6037BA6633BDFF4F63D6C8B7C70D6160 /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D3BB1E071E08C2E9506B9AE51B69F8 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64F9EB4F4003560CB2011269B4E39334 /* Pods-CitySearchTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73244A4FD8DC554F388568B4F3F6B539 /* Pods-CitySearchTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6680C3C8924C7503A6A54CF7A66BFF2F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E31BFCE69A3A4BEC13CE3C15C09F41 /* QuartzCore.framework */; };
+		7804E0B3C98A2FE1E98AF544E88C9C3C /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C91D5087E348BBA1832E48E62AD9A23F /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B0DD32902633C7FF95B5745D8322BC3 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93926851AF33BC18D3C1537711204BFE /* SVProgressHUD.bundle */; };
+		7E4D07E47796B395395749CC05DE42DC /* Pods-CitySearch-CitySearchUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F91F9201C71AA972B8978578576757 /* Pods-CitySearch-CitySearchUITests-dummy.m */; };
+		7EBD69261E1BB483E945EEB090DFF2A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */; };
+		89717EC07E6324D3405867E754AE9131 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DA76AB235F94873AD5CABDDE823D2C6E /* PrivacyInfo.xcprivacy */; };
+		91930FDB4F9CCBBA9789806D1611AE6F /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = EE68EFA26AE88D67B45464D4D6FEFA37 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2A6C2397B8ADAE4D7D64B09FF82570E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */; };
+		C9A97CFAACFF2D7E4863137DAB47E6B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */; };
+		CEC96BA519484844D19338CC420C8808 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C2E5F3ED99E2905E0AB618E95D45F /* SVIndefiniteAnimatedView.m */; };
+		CEDBB209340A6927042AF195EE8485C0 /* Pods-CitySearchTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B56B84FB326543957B8E24D6DBF8F7C /* Pods-CitySearchTests-dummy.m */; };
+		E30E824D8CE04C815FAD7F424CF7C270 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9320F794607AED0BB6B5A397CAEB05C7 /* SVProgressAnimatedView.m */; };
+		ECE5C670EBF676A3677BFA047FB7F127 /* Pods-CitySearch-CitySearchUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 33349E32EEFC4F5DAB823F201B6D0717 /* Pods-CitySearch-CitySearchUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7B1CA1044701B9BE4D120270E0255D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */; };
+		F80F98F346849C0CBBE34040176698D7 /* Pods-CitySearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB1364D7088C361E76670C040C301E1A /* Pods-CitySearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F87D4D6C6668A4AA86232BA3BDB9A178 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AA8DA35883F996408D18A2730C2B6B /* SVProgressHUD.m */; };
+		FB75853E6A0E0682E1000CFBD293EBBC /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C40604E45D8DF557F5D793D0F3C6 /* SVProgressHUD-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		891C6550AADE667574DE3A7755030634 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C8D67D8B72D6BA42CCEDB648537A340;
+			remoteInfo = SVProgressHUD;
+		};
+		BF14F0CE106C887201F0B34FAC5F6453 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6120EB25073447DAFEA08BF963143B4;
+			remoteInfo = "Pods-CitySearch";
+		};
+		F3F94C260D51291160AC1FA1B22D36B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C8D67D8B72D6BA42CCEDB648537A340;
+			remoteInfo = SVProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0843973425832AAD946AB78C5779AD2F /* Pods-CitySearchTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearchTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3041E947800ACEC6630EF3B2CF14D38E /* Pods-CitySearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearch-acknowledgements.plist"; sourceTree = "<group>"; };
+		33349E32EEFC4F5DAB823F201B6D0717 /* Pods-CitySearch-CitySearchUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CitySearch-CitySearchUITests-umbrella.h"; sourceTree = "<group>"; };
+		342A698E316BE2BA346CB09FFA22EA11 /* Pods-CitySearch-CitySearchUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CitySearch-CitySearchUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3B28DE4DE7F4A4EEA70E1CAAEA5A8EC7 /* Pods-CitySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearch.release.xcconfig"; sourceTree = "<group>"; };
+		42B68765E1A8C0E5E92BC53D53C95347 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
+		44E31BFCE69A3A4BEC13CE3C15C09F41 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		45F91F9201C71AA972B8978578576757 /* Pods-CitySearch-CitySearchUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CitySearch-CitySearchUITests-dummy.m"; sourceTree = "<group>"; };
+		4749FE60BF7849A18E381FF45A14525F /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		48C4A2E1C3D1BD340C9619CE6E90F32C /* Pods-CitySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearch.debug.xcconfig"; sourceTree = "<group>"; };
+		48F2F47A0655C8CF1E674508AF14D07C /* Pods-CitySearchTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CitySearchTests.modulemap"; sourceTree = "<group>"; };
+		5007FBBAF48B1A8EDF4E921B254EB732 /* Pods-CitySearch-CitySearchUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CitySearch-CitySearchUITests-frameworks.sh"; sourceTree = "<group>"; };
+		51AA8DA35883F996408D18A2730C2B6B /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		5788ED649291BDB06E1E9C8F7179C069 /* Pods-CitySearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearchTests.release.xcconfig"; sourceTree = "<group>"; };
+		5850C40604E45D8DF557F5D793D0F3C6 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		5B56B84FB326543957B8E24D6DBF8F7C /* Pods-CitySearchTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CitySearchTests-dummy.m"; sourceTree = "<group>"; };
+		614F6E505D34E409B094C03366C54967 /* Pods-CitySearch-CitySearchUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearch-CitySearchUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		64018610FB057D3D6B9BE8AF8C82DA38 /* Pods-CitySearch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearch-Info.plist"; sourceTree = "<group>"; };
+		73244A4FD8DC554F388568B4F3F6B539 /* Pods-CitySearchTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CitySearchTests-umbrella.h"; sourceTree = "<group>"; };
+		73C66CEFC6F88E7641C57B569B1636A3 /* SVProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.release.xcconfig; sourceTree = "<group>"; };
+		741C6AD472023CB4D4BDE63C1E0F8290 /* Pods-CitySearch-CitySearchUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearch-CitySearchUITests-Info.plist"; sourceTree = "<group>"; };
+		75DF3ECDE936C4CF0A9592CE93FF1BC1 /* Pods-CitySearch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CitySearch-frameworks.sh"; sourceTree = "<group>"; };
+		82B296B3DE9173276FF560200279D18D /* SVProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		8300EFD955412274D262A16B471E7539 /* Pods-CitySearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CitySearch-dummy.m"; sourceTree = "<group>"; };
+		830B2484203442C1A2A674DD77A7674E /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		848C9014411401EEF4823243C99F28B2 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearch-CitySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		88D3BB1E071E08C2E9506B9AE51B69F8 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		9320F794607AED0BB6B5A397CAEB05C7 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		93926851AF33BC18D3C1537711204BFE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A507D147E422FFF8CD5E02FDF206EC4C /* Pods-CitySearchTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CitySearchTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B6E27D000496F2C7EC51A444B114957A /* Pods-CitySearch */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CitySearch"; path = Pods_CitySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9DA8052F1061DCEE2FCA33D110D9EDF /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearch-CitySearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC3F5F72C111A28DAAD0A0340E157A66 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		C46516D3BF9537874CB061297FC95003 /* Pods-CitySearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CitySearch.modulemap"; sourceTree = "<group>"; };
+		C5ED0D22040CC70DF2B7F56BA58BB3D1 /* Pods-CitySearchTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CitySearchTests-Info.plist"; sourceTree = "<group>"; };
+		C91D5087E348BBA1832E48E62AD9A23F /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		CC9D24825403E5E9713E55110557C1C8 /* Pods-CitySearch-CitySearchUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CitySearch-CitySearchUITests.modulemap"; sourceTree = "<group>"; };
+		CE8C2E5F3ED99E2905E0AB618E95D45F /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D453E4EFAE75FA38805FBB454A673BA2 /* Pods-CitySearchTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CitySearchTests"; path = Pods_CitySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D503225CBF12E6B9ADFC05C561B08521 /* SVProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SVProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		DA76AB235F94873AD5CABDDE823D2C6E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = SVProgressHUD/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DCFC987D1B04A1506FD8B6BA9BB95011 /* Pods-CitySearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CitySearch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DE0AF009B15A3FE14C26457244E70C9D /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		DE4CA3C1EDA2D37392BD92EBAF17EE31 /* Pods-CitySearch-CitySearchUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CitySearch-CitySearchUITests"; path = Pods_CitySearch_CitySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB76EE1F76D027E9D8ABCB31D75F3F75 /* Pods-CitySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CitySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE68EFA26AE88D67B45464D4D6FEFA37 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		FB1364D7088C361E76670C040C301E1A /* Pods-CitySearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CitySearch-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A94D5BFBFD52347331471FC121CE92E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7B1CA1044701B9BE4D120270E0255D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55319122175FEB45E6EFFD3C35ABDAC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9A97CFAACFF2D7E4863137DAB47E6B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58634B2196876B07B5310C7EACCF921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2A6C2397B8ADAE4D7D64B09FF82570E /* Foundation.framework in Frameworks */,
+				6680C3C8924C7503A6A54CF7A66BFF2F /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED093DF6A39F4565F3F2F3CDACF537FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EBD69261E1BB483E945EEB090DFF2A0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11189DF8C0E319D3E3B5BDC2706795C6 /* Pods-CitySearch-CitySearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC9D24825403E5E9713E55110557C1C8 /* Pods-CitySearch-CitySearchUITests.modulemap */,
+				342A698E316BE2BA346CB09FFA22EA11 /* Pods-CitySearch-CitySearchUITests-acknowledgements.markdown */,
+				614F6E505D34E409B094C03366C54967 /* Pods-CitySearch-CitySearchUITests-acknowledgements.plist */,
+				45F91F9201C71AA972B8978578576757 /* Pods-CitySearch-CitySearchUITests-dummy.m */,
+				5007FBBAF48B1A8EDF4E921B254EB732 /* Pods-CitySearch-CitySearchUITests-frameworks.sh */,
+				741C6AD472023CB4D4BDE63C1E0F8290 /* Pods-CitySearch-CitySearchUITests-Info.plist */,
+				33349E32EEFC4F5DAB823F201B6D0717 /* Pods-CitySearch-CitySearchUITests-umbrella.h */,
+				B9DA8052F1061DCEE2FCA33D110D9EDF /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */,
+				848C9014411401EEF4823243C99F28B2 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */,
+			);
+			name = "Pods-CitySearch-CitySearchUITests";
+			path = "Target Support Files/Pods-CitySearch-CitySearchUITests";
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E621C5F3D3D50DF1BF57F5CC0295126 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1849A13586203EE18BEAA2D61BA67220 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF301966A96509314AF0FB90BDAAF7CA /* Pods-CitySearch */,
+				11189DF8C0E319D3E3B5BDC2706795C6 /* Pods-CitySearch-CitySearchUITests */,
+				8CCD61A44608263FEF6C7DA52991344F /* Pods-CitySearchTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1DDC647C62A6068A23AD8011CCCA2171 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA76AB235F94873AD5CABDDE823D2C6E /* PrivacyInfo.xcprivacy */,
+				93926851AF33BC18D3C1537711204BFE /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2EBE0456C26120401ADD28098537B246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6E27D000496F2C7EC51A444B114957A /* Pods-CitySearch */,
+				DE4CA3C1EDA2D37392BD92EBAF17EE31 /* Pods-CitySearch-CitySearchUITests */,
+				D453E4EFAE75FA38805FBB454A673BA2 /* Pods-CitySearchTests */,
+				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D73DAC8178FED6845FBB64C2F9EB85F /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CF0429E3621637B1837257A4901D29AC /* Core */,
+				92868531EE729E8AB9A12E49F4381A6F /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		7E621C5F3D3D50DF1BF57F5CC0295126 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9FECC1FDAD9F26B079096EFC42AB3 /* Foundation.framework */,
+				44E31BFCE69A3A4BEC13CE3C15C09F41 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8CCD61A44608263FEF6C7DA52991344F /* Pods-CitySearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				48F2F47A0655C8CF1E674508AF14D07C /* Pods-CitySearchTests.modulemap */,
+				A507D147E422FFF8CD5E02FDF206EC4C /* Pods-CitySearchTests-acknowledgements.markdown */,
+				0843973425832AAD946AB78C5779AD2F /* Pods-CitySearchTests-acknowledgements.plist */,
+				5B56B84FB326543957B8E24D6DBF8F7C /* Pods-CitySearchTests-dummy.m */,
+				C5ED0D22040CC70DF2B7F56BA58BB3D1 /* Pods-CitySearchTests-Info.plist */,
+				73244A4FD8DC554F388568B4F3F6B539 /* Pods-CitySearchTests-umbrella.h */,
+				EB76EE1F76D027E9D8ABCB31D75F3F75 /* Pods-CitySearchTests.debug.xcconfig */,
+				5788ED649291BDB06E1E9C8F7179C069 /* Pods-CitySearchTests.release.xcconfig */,
+			);
+			name = "Pods-CitySearchTests";
+			path = "Target Support Files/Pods-CitySearchTests";
+			sourceTree = "<group>";
+		};
+		92868531EE729E8AB9A12E49F4381A6F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42B68765E1A8C0E5E92BC53D53C95347 /* SVProgressHUD.modulemap */,
+				5850C40604E45D8DF557F5D793D0F3C6 /* SVProgressHUD-dummy.m */,
+				D503225CBF12E6B9ADFC05C561B08521 /* SVProgressHUD-Info.plist */,
+				DE0AF009B15A3FE14C26457244E70C9D /* SVProgressHUD-prefix.pch */,
+				88D3BB1E071E08C2E9506B9AE51B69F8 /* SVProgressHUD-umbrella.h */,
+				82B296B3DE9173276FF560200279D18D /* SVProgressHUD.debug.xcconfig */,
+				73C66CEFC6F88E7641C57B569B1636A3 /* SVProgressHUD.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		BF301966A96509314AF0FB90BDAAF7CA /* Pods-CitySearch */ = {
+			isa = PBXGroup;
+			children = (
+				C46516D3BF9537874CB061297FC95003 /* Pods-CitySearch.modulemap */,
+				DCFC987D1B04A1506FD8B6BA9BB95011 /* Pods-CitySearch-acknowledgements.markdown */,
+				3041E947800ACEC6630EF3B2CF14D38E /* Pods-CitySearch-acknowledgements.plist */,
+				8300EFD955412274D262A16B471E7539 /* Pods-CitySearch-dummy.m */,
+				75DF3ECDE936C4CF0A9592CE93FF1BC1 /* Pods-CitySearch-frameworks.sh */,
+				64018610FB057D3D6B9BE8AF8C82DA38 /* Pods-CitySearch-Info.plist */,
+				FB1364D7088C361E76670C040C301E1A /* Pods-CitySearch-umbrella.h */,
+				48C4A2E1C3D1BD340C9619CE6E90F32C /* Pods-CitySearch.debug.xcconfig */,
+				3B28DE4DE7F4A4EEA70E1CAAEA5A8EC7 /* Pods-CitySearch.release.xcconfig */,
+			);
+			name = "Pods-CitySearch";
+			path = "Target Support Files/Pods-CitySearch";
+			sourceTree = "<group>";
+		};
+		C461FCCCEFBA74B7C65DBE66223C11D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D73DAC8178FED6845FBB64C2F9EB85F /* SVProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF0429E3621637B1837257A4901D29AC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F5F72C111A28DAAD0A0340E157A66 /* SVIndefiniteAnimatedView.h */,
+				CE8C2E5F3ED99E2905E0AB618E95D45F /* SVIndefiniteAnimatedView.m */,
+				4749FE60BF7849A18E381FF45A14525F /* SVProgressAnimatedView.h */,
+				9320F794607AED0BB6B5A397CAEB05C7 /* SVProgressAnimatedView.m */,
+				EE68EFA26AE88D67B45464D4D6FEFA37 /* SVProgressHUD.h */,
+				51AA8DA35883F996408D18A2730C2B6B /* SVProgressHUD.m */,
+				C91D5087E348BBA1832E48E62AD9A23F /* SVRadialGradientLayer.h */,
+				830B2484203442C1A2A674DD77A7674E /* SVRadialGradientLayer.m */,
+				1DDC647C62A6068A23AD8011CCCA2171 /* Resources */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				C461FCCCEFBA74B7C65DBE66223C11D4 /* Pods */,
+				2EBE0456C26120401ADD28098537B246 /* Products */,
+				1849A13586203EE18BEAA2D61BA67220 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		224DC69D431CB530ACF39B754C429375 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64F9EB4F4003560CB2011269B4E39334 /* Pods-CitySearchTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		309904298B6DE845DEA733AE1921576C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE5C670EBF676A3677BFA047FB7F127 /* Pods-CitySearch-CitySearchUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D6B7938B5808527531F6B197400DD07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80F98F346849C0CBBE34040176698D7 /* Pods-CitySearch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FADE750CFF2C806685AE314EE7FF71B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1739C4B63D12177E58B7110F21E939EB /* SVIndefiniteAnimatedView.h in Headers */,
+				14F6602F47FF59347CB6807CE217EDC5 /* SVProgressAnimatedView.h in Headers */,
+				91930FDB4F9CCBBA9789806D1611AE6F /* SVProgressHUD.h in Headers */,
+				6037BA6633BDFF4F63D6C8B7C70D6160 /* SVProgressHUD-umbrella.h in Headers */,
+				7804E0B3C98A2FE1E98AF544E88C9C3C /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69444753864BFEE93D93DCEABA3746A1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				FADE750CFF2C806685AE314EE7FF71B1 /* Headers */,
+				458ACEF2C06C471F7CFF2C2824CA0B34 /* Sources */,
+				58634B2196876B07B5310C7EACCF921E /* Frameworks */,
+				240039A2FB82D44B5CE5DB05D41F6BA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */;
+			productType = "com.apple.product-type.framework";
+		};
+		5BBD9FD5EBAACFCDE058B3C36F7AFEF5 /* Pods-CitySearch-CitySearchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D03E2C208EBF880C5478D9EFAA96EAF6 /* Build configuration list for PBXNativeTarget "Pods-CitySearch-CitySearchUITests" */;
+			buildPhases = (
+				309904298B6DE845DEA733AE1921576C /* Headers */,
+				10CBCEF2AA96961C3CB77E7CE7724EF3 /* Sources */,
+				55319122175FEB45E6EFFD3C35ABDAC9 /* Frameworks */,
+				ABDCDB48C18A4240B5A589743CACF3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1726E128163C06CFB75423BC7AAD88F1 /* PBXTargetDependency */,
+			);
+			name = "Pods-CitySearch-CitySearchUITests";
+			productName = Pods_CitySearch_CitySearchUITests;
+			productReference = DE4CA3C1EDA2D37392BD92EBAF17EE31 /* Pods-CitySearch-CitySearchUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6120EB25073447DAFEA08BF963143B4 /* Pods-CitySearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50989A00DBC62AD565C0DF419875E181 /* Build configuration list for PBXNativeTarget "Pods-CitySearch" */;
+			buildPhases = (
+				6D6B7938B5808527531F6B197400DD07 /* Headers */,
+				9081DC9FFEF249566FC1A7CB23A9D039 /* Sources */,
+				0A94D5BFBFD52347331471FC121CE92E /* Frameworks */,
+				97FE2B5E7C6CBB252F4DA04C213C8DA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63F5F1D46BE5950EC187E4934964DC10 /* PBXTargetDependency */,
+			);
+			name = "Pods-CitySearch";
+			productName = Pods_CitySearch;
+			productReference = B6E27D000496F2C7EC51A444B114957A /* Pods-CitySearch */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD58BF4CC6D218AA3F313F1E1DAB5996 /* Pods-CitySearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7DD1DCC1E7ED626A4031CFC531F9134 /* Build configuration list for PBXNativeTarget "Pods-CitySearchTests" */;
+			buildPhases = (
+				224DC69D431CB530ACF39B754C429375 /* Headers */,
+				FF306A4D9B740A1103CA2FF851BB8820 /* Sources */,
+				ED093DF6A39F4565F3F2F3CDACF537FD /* Frameworks */,
+				1AC103F2BB822DEA7A3A7CCFE97B52F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AF8AC79E26EBFFF67E437DFA68E2382 /* PBXTargetDependency */,
+			);
+			name = "Pods-CitySearchTests";
+			productName = Pods_CitySearchTests;
+			productReference = D453E4EFAE75FA38805FBB454A673BA2 /* Pods-CitySearchTests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2EBE0456C26120401ADD28098537B246 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6120EB25073447DAFEA08BF963143B4 /* Pods-CitySearch */,
+				5BBD9FD5EBAACFCDE058B3C36F7AFEF5 /* Pods-CitySearch-CitySearchUITests */,
+				FD58BF4CC6D218AA3F313F1E1DAB5996 /* Pods-CitySearchTests */,
+				1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AC103F2BB822DEA7A3A7CCFE97B52F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		240039A2FB82D44B5CE5DB05D41F6BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89717EC07E6324D3405867E754AE9131 /* PrivacyInfo.xcprivacy in Resources */,
+				7B0DD32902633C7FF95B5745D8322BC3 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97FE2B5E7C6CBB252F4DA04C213C8DA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABDCDB48C18A4240B5A589743CACF3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10CBCEF2AA96961C3CB77E7CE7724EF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D07E47796B395395749CC05DE42DC /* Pods-CitySearch-CitySearchUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458ACEF2C06C471F7CFF2C2824CA0B34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC96BA519484844D19338CC420C8808 /* SVIndefiniteAnimatedView.m in Sources */,
+				E30E824D8CE04C815FAD7F424CF7C270 /* SVProgressAnimatedView.m in Sources */,
+				F87D4D6C6668A4AA86232BA3BDB9A178 /* SVProgressHUD.m in Sources */,
+				FB75853E6A0E0682E1000CFBD293EBBC /* SVProgressHUD-dummy.m in Sources */,
+				517CF33F75EA768ED4B7F0F440F54A7E /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9081DC9FFEF249566FC1A7CB23A9D039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155AE15559320AFD4FBC863624FA4FEA /* Pods-CitySearch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF306A4D9B740A1103CA2FF851BB8820 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDBB209340A6927042AF195EE8485C0 /* Pods-CitySearchTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1726E128163C06CFB75423BC7AAD88F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */;
+			targetProxy = F3F94C260D51291160AC1FA1B22D36B7 /* PBXContainerItemProxy */;
+		};
+		1AF8AC79E26EBFFF67E437DFA68E2382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-CitySearch";
+			target = B6120EB25073447DAFEA08BF963143B4 /* Pods-CitySearch */;
+			targetProxy = BF14F0CE106C887201F0B34FAC5F6453 /* PBXContainerItemProxy */;
+		};
+		63F5F1D46BE5950EC187E4934964DC10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */;
+			targetProxy = 891C6550AADE667574DE3A7755030634 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B1F42F08F2B53D503A5BB90F55813A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82B296B3DE9173276FF560200279D18D /* SVProgressHUD.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		531AB9B51913EE274022D67EB63CB4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8C518221BF7C9BCD733CC814C4EF9F61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848C9014411401EEF4823243C99F28B2 /* Pods-CitySearch-CitySearchUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E2674D77B8E478A3C75E0D6F7658FBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB76EE1F76D027E9D8ABCB31D75F3F75 /* Pods-CitySearchTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B1CC6DA48CBDF86D73AD5C256AE18E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73C66CEFC6F88E7641C57B569B1636A3 /* SVProgressHUD.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B9A6F01A8E6DAB94C072B7E7E3924671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B28DE4DE7F4A4EEA70E1CAAEA5A8EC7 /* Pods-CitySearch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearch/Pods-CitySearch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearch/Pods-CitySearch.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC04392D32D8E94CCA096D652D9BBE00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48C4A2E1C3D1BD340C9619CE6E90F32C /* Pods-CitySearch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearch/Pods-CitySearch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearch/Pods-CitySearch.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D65E46FB4124E241E7003283269BAB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5788ED649291BDB06E1E9C8F7179C069 /* Pods-CitySearchTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearchTests/Pods-CitySearchTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FCD5081EF9CE50F1105D1AFD2976E151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DA8052F1061DCEE2FCA33D110D9EDF /* Pods-CitySearch-CitySearchUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CitySearch-CitySearchUITests/Pods-CitySearch-CitySearchUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */,
+				531AB9B51913EE274022D67EB63CB4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50989A00DBC62AD565C0DF419875E181 /* Build configuration list for PBXNativeTarget "Pods-CitySearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC04392D32D8E94CCA096D652D9BBE00 /* Debug */,
+				B9A6F01A8E6DAB94C072B7E7E3924671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69444753864BFEE93D93DCEABA3746A1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B1F42F08F2B53D503A5BB90F55813A8 /* Debug */,
+				B1CC6DA48CBDF86D73AD5C256AE18E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D03E2C208EBF880C5478D9EFAA96EAF6 /* Build configuration list for PBXNativeTarget "Pods-CitySearch-CitySearchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCD5081EF9CE50F1105D1AFD2976E151 /* Debug */,
+				8C518221BF7C9BCD733CC814C4EF9F61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7DD1DCC1E7ED626A4031CFC531F9134 /* Build configuration list for PBXNativeTarget "Pods-CitySearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E2674D77B8E478A3C75E0D6F7658FBD /* Debug */,
+				D65E46FB4124E241E7003283269BAB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
