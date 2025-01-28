@@ -1,8 +1,8 @@
 import UIKit
 import SVProgressHUD
 
-class CitySearchViewController: UIViewController {
-    private let viewModel = CitySearchViewModel()
+class CitySearchVC: UIViewController {
+    private let viewModel = CitySearchVM()
     
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -128,7 +128,7 @@ class CitySearchViewController: UIViewController {
     }
     
     @objc private func gpsButtonTapped() {
-        let mapVC = MapViewController()
+        let mapVC = MapVC()
         navigationController?.pushViewController(mapVC, animated: true)
     }
     
@@ -146,15 +146,15 @@ class CitySearchViewController: UIViewController {
     }
 }
 
-extension CitySearchViewController: UITableViewDelegate {
+extension CitySearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCity = viewModel.city(at: indexPath.row)
-        let detailVC = CityDetailPopupViewController(city: selectedCity)
+        let detailVC = CityDetailPopupVC(city: selectedCity)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
-extension CitySearchViewController: UITableViewDataSource {
+extension CitySearchVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cityCount
     }
@@ -169,7 +169,7 @@ extension CitySearchViewController: UITableViewDataSource {
     }
 }
 
-extension CitySearchViewController: UISearchBarDelegate {
+extension CitySearchVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, !query.isEmpty else {
             viewModel.resetToDummyData()

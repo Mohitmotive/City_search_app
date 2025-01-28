@@ -38,7 +38,7 @@ class SplashScreenVC: UIViewController {
     }
     
     @objc private func startSearching() {
-        let citySearchVC = CitySearchViewController()
+        let citySearchVC = CitySearchVC()
         let navigationController = UINavigationController(rootViewController: citySearchVC)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)

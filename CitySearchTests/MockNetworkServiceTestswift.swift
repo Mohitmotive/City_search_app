@@ -24,22 +24,22 @@ final class MockNetworkServiceTests: XCTestCase {
     
     func testFetchDataSuccess() {
         let mockCityResponse = City(
-            geonameId: 12345,
+            geoNameId: 12345,
             toponymName: "London",
-            name: "London",
+            cityName: "London",
             countryName: "United Kingdom",
             countryCode: "GB",
-            adminName1: "England",
-            lat: "51.5074",
-            lng: "-0.1278",
+            administrativeRegion: "England",
+            latitude: "51.5074",
+            longitude: "-0.1278",
             population: 8908081,
-            fcodeName: "capital of a political entity"
+            featureCodeName: "capital of a political entity"
         )
 
         mockNetworkService.mockResponse = mockCityResponse
         
         let expectation = self.expectation(description: "Success response received")
-        mockNetworkService.fetcData(urlString: "mock_url") { (result: Result<City, any Error>) in
+        mockNetworkService.fetchData(urlString: "mock_url") { (result: Result<City, any Error>) in
             switch result {
             case .success(let city):
                 XCTAssertEqual(city.toponymName, "London", "The city name should match the mock response.")
@@ -57,7 +57,7 @@ final class MockNetworkServiceTests: XCTestCase {
         
         let expectation = self.expectation(description: "Error response received")
         
-        mockNetworkService.fetcData(urlString: "mock_url") { (result: Result<City, any Error>) in
+        mockNetworkService.fetchData(urlString: "mock_url") { (result: Result<City, any Error>) in
             switch result {
             case .success:
                 XCTFail("Expected failure but got success.")
@@ -73,10 +73,9 @@ final class MockNetworkServiceTests: XCTestCase {
     
     func testFetchDataInvalidResponse() {
         mockNetworkService.mockResponse = "Invalid Response"
-        
         let expectation = self.expectation(description: "Invalid response error received")
         
-        mockNetworkService.fetcData(urlString: "mock_url") { (result: Result<City, any Error>) in
+        mockNetworkService.fetchData(urlString: "mock_url") { (result: Result<City, any Error>) in
             switch result {
             case .success:
                 XCTFail("Expected failure but got success.")

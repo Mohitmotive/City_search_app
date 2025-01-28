@@ -8,17 +8,31 @@
 import Foundation
 
 struct City: Codable {
-    let geonameId: Int
+    let geoNameId: Int
     let toponymName: String
-    let name: String
+    let cityName: String
     let countryName: String
     let countryCode: String
-    let adminName1: String
-    let lat: String
-    let lng: String
+    let administrativeRegion: String
+    let latitude: String
+    let longitude: String
     let population: Int
-    let fcodeName: String
+    let featureCodeName: String
+
+    enum CodingKeys: String, CodingKey {
+        case geoNameId = "geonameId"
+        case toponymName
+        case cityName = "name"
+        case countryName
+        case countryCode
+        case administrativeRegion = "adminName1"
+        case latitude = "lat"
+        case longitude = "lng"
+        case population
+        case featureCodeName = "fcodeName"
+    }
 }
+
 
 
 

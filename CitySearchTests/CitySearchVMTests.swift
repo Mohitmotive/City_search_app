@@ -2,7 +2,6 @@ import XCTest
 @testable import CitySearch
 
 class CitySearchVMTests: XCTestCase {
-    
     var viewModel: CitySearchViewModel!
     
     override func setUp() {
@@ -17,28 +16,28 @@ class CitySearchVMTests: XCTestCase {
     func testFetchCitiesWithQuery() {
         let mockCities = [
             City(
-                geonameId: 12345,
+                geoNameId: 12345,
                 toponymName: "Berlin",
-                name: "Berlin",
+                cityName: "Berlin",
                 countryName: "Germany",
                 countryCode: "DE",
-                adminName1: "Berlin",
-                lat: "52.5200",
-                lng: "13.4050",
+                administrativeRegion: "Berlin",
+                latitude: "52.5200",
+                longitude: "13.4050",
                 population: 3769000,
-                fcodeName: "capital of a political entity"
+                featureCodeName: "capital of a political entity"
             ),
             City(
-                geonameId: 67890,
+                geoNameId: 67890,
                 toponymName: "Madrid",
-                name: "Madrid",
+                cityName: "Madrid",
                 countryName: "Spain",
                 countryCode: "ES",
-                adminName1: "Madrid",
-                lat: "40.4168",
-                lng: "-3.7038",
+                administrativeRegion: "Madrid",
+                latitude: "40.4168",
+                longitude: "-3.7038",
                 population: 3266000,
-                fcodeName: "capital of a political entity"
+                featureCodeName: "capital of a political entity"
             )
         ]
 
@@ -48,7 +47,7 @@ class CitySearchVMTests: XCTestCase {
         
         let firstCity = viewModel.city(at: 0)
         XCTAssertEqual(firstCity.toponymName, "Berlin")
-        XCTAssertEqual(firstCity.adminName1, "Berlin")
+        XCTAssertEqual(firstCity.administrativeRegion, "Berlin")
         XCTAssertEqual(firstCity.countryName, "Germany")
     }
 

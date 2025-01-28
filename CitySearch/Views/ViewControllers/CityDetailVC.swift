@@ -1,6 +1,6 @@
 import UIKit
 
-class CityDetailPopupViewController: UIViewController {
+class CityDetailPopupVC: UIViewController {
     private let city: City
 
     private let closeButton: UIButton = {
@@ -75,11 +75,11 @@ class CityDetailPopupViewController: UIViewController {
         let details = """
         Name: \(city.toponymName)
         Country: \(city.countryName)
-        State/Province: \(city.adminName1)
+        State/Province: \(city.administrativeRegion)
         Population: \(city.population)
-        Latitude: \(city.lat)
-        Longitude: \(city.lng)
-        Feature: \(city.fcodeName)
+        Latitude: \(city.latitude)
+        Longitude: \(city.longitude)
+        Feature: \(city.featureCodeName)
         """
         detailsLabel.text = details
     }

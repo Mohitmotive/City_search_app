@@ -61,7 +61,7 @@ class CityTableViewCell: UITableViewCell {
 
     func configure(with city: City) {
         cityNameLabel.text = city.toponymName
-        stateNameLabel.text = city.adminName1
+        stateNameLabel.text = city.administrativeRegion
         countryNameLabel.text = city.countryName
     }
 }

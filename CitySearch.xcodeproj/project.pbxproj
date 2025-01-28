@@ -45,6 +45,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B07EB63D2D48A2EA00690435 /* Exceptions for "CitySearchTests" folder in "CitySearch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MockNetworkService.swift,
+			);
+			target = B0286F9C2D3EACFC00791335 /* CitySearch */;
+		};
+		B07EB63E2D48A2EA00690435 /* Exceptions for "CitySearchTests" folder in "CitySearchTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MockNetworkService.swift,
+			);
+			target = B0286FB22D3EACFD00791335 /* CitySearchTests */;
+		};
 		B0EC7A842D3F9FF800151773 /* Exceptions for "CitySearch" folder in "CitySearch" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -57,6 +71,10 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B0286FB62D3EACFD00791335 /* CitySearchTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B07EB63D2D48A2EA00690435 /* Exceptions for "CitySearchTests" folder in "CitySearch" target */,
+				B07EB63E2D48A2EA00690435 /* Exceptions for "CitySearchTests" folder in "CitySearchTests" target */,
+			);
 			path = CitySearchTests;
 			sourceTree = "<group>";
 		};

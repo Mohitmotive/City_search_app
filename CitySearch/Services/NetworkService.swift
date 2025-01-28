@@ -3,8 +3,6 @@ import Foundation
 class NetworkService: NetworkServiceProtocol {
     static let shared: NetworkService = NetworkService()
 
-    private init() { }
-
     func fetchData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
