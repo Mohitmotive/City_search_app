@@ -1,0 +1,48 @@
+# Mac OSX
+.DS_Store
+
+# Documentation
+Documents/bin/
+Documents/src/*.png
+
+# Xcode
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+profile
+*.moved-aside
+.idea/
+*.h
+*.xccheckout
+*.xcscmblueprint
+
+# Mergetool original files
+*.orig
+
+# OCLint
+compile_commands.json
+
+# Cocoa Pods
+Pods
+
+# Fastlane
+fastlane/report.xml
+fastlane/apps
+fastlane/build
+fastlane/build.xcarchive
+fastlane/logs
+fastlane/xcov_report/
+
+# Rugby
+.rugby
+
+# Xcode project files
+KeepTruckin.xcworkspace/xcshareddata/swiftpm/Package.resolved
