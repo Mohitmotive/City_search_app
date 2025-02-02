@@ -3,6 +3,7 @@ import UIKit
 
 class CitySearchVC: UIViewController, UISearchBarDelegate {
     private let viewModel = CitySearchVM(networkService: NetworkService())
+    private var floatingChatView: FloatingChatVC?
 
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -23,6 +24,17 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
+
+    private let chatbotButton: UIButton = {
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(systemName: "bubble.left.and.bubble.right.fill"), for: .normal)
+            button.tintColor = .white
+            button.backgroundColor = .black
+            button.layer.cornerRadius = 32
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.addTarget(self, action: #selector(chatbotButtonTapped), for: .touchUpInside)
+            return button
+        }()
 
     private let gpsButton: UIButton = {
         let button = UIButton()
@@ -101,7 +113,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         let button = UIButton(type: .system)
         button.setTitle("Close", for: .normal)
         button.addTarget(
-            self, action: #selector(closeDetailTapped), for: .touchUpInside)
+        self, action: #selector(closeDetailTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -115,6 +127,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         setupUI()
         setupBindings()
         configureSVProgressHUD()
+        setupFloatingChatButton()
+
     }
 
     private func setupUI() {
@@ -131,6 +145,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         view.addSubview(cityDetailView)
         view.addSubview(blurEffectView)
         view.addSubview(dropdownView)
+        view.addSubview(chatbotButton)
 
         blurEffectView.frame = view.bounds
         dropdownView.addSubview(closeButton)
@@ -217,6 +232,14 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
                 equalTo: cityDetailView.centerXAnchor),
             closeDetailButton.bottomAnchor.constraint(
                 equalTo: cityDetailView.bottomAnchor, constant: -16),
+
+            // Floating AI Chatbot Button Constraints
+            chatbotButton.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor, constant: -20),
+            chatbotButton.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            chatbotButton.widthAnchor.constraint(equalToConstant: 64),
+            chatbotButton.heightAnchor.constraint(equalToConstant: 64),
         ])
     }
 
@@ -224,11 +247,24 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             searchButton.isEnabled = false
             searchButton.backgroundColor = .gray
+            viewModel.allCities = []
+            tableView.reloadData()
         } else {
             searchButton.isEnabled = true
             searchButton.backgroundColor = .black
         }
     }
+    
+    private func setupFloatingChatButton() {
+            view.addSubview(chatbotButton)
+
+            NSLayoutConstraint.activate([
+                chatbotButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                chatbotButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+                chatbotButton.widthAnchor.constraint(equalToConstant: 64),
+                chatbotButton.heightAnchor.constraint(equalToConstant: 64)
+            ])
+        }
 
     private func setupNavigationBarAppearance() {
         if #available(iOS 13.0, *) {
@@ -351,6 +387,25 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    @objc private func chatbotButtonTapped() {
+            if floatingChatView == nil {
+                let chatView = FloatingChatVC()
+                view.addSubview(chatView)
+                
+                NSLayoutConstraint.activate([
+                    chatView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    chatView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                    chatView.widthAnchor.constraint(equalToConstant: 300),
+                    chatView.heightAnchor.constraint(equalToConstant: 400)
+                ])
+
+                floatingChatView = chatView
+            } else {
+                floatingChatView?.removeFromSuperview()
+                floatingChatView = nil
+            }
+        }
+    
     @objc private func gpsButtonTapped() {
         let mapVC = MapVC()
         mapVC.cities = viewModel.allCities
