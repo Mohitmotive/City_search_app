@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func fetchData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> Void)
+    func fetchCities(query: String, completion: @escaping (Result<[City], Error>) -> Void)
 }

@@ -1,12 +1,14 @@
 import SVProgressHUD
 import UIKit
 import Foundation
+import SwiftUI
+import Combine
 
 class CitySearchVC: UIViewController, UISearchBarDelegate {
     private let viewModel = CitySearchVM(networkService: NetworkService())
     private var floatingChatView: FloatingChatVC?
     private var searchTimer: Timer?
-
+    private var cancellables = Set<AnyCancellable>()
 
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -123,15 +125,100 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
 
     private var cityDetailViewTopConstraint: NSLayoutConstraint?
 
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No internet connection"
+        // label.textColor = .
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true 
+        return label
+    }()
+
+    private let noInternetView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private let noInternetLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No Internet Connection"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let subheadingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please check your connection and try again."
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let retryButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Retry", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        return button
+    }()
+
+    private let wifiSlashImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "wifi.slash")
+        imageView.image = image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .black
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupNavigationBarAppearance()
         setupUI()
-        setupBindings()
         configureSVProgressHUD()
         setupFloatingChatButton()
 
+        // Set up closures for handling updates and errors
+        viewModel.onCitiesUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self?.tableView.reloadData()
+            }
+        }
+
+        viewModel.onError = { [weak self] errorMessage in
+            DispatchQueue.main.async {
+                SVProgressHUD.showError(withStatus: errorMessage)
+            }
+        }
+
+        // Observe network connectivity
+        viewModel.networkMonitor.$isConnected
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isConnected in
+                if !isConnected {
+                    self?.showNoInternetBanner()
+                } else {
+                    self?.hideNoInternetBanner()
+                }
+            }
+            .store(in: &cancellables)
+
+        // Add action for retry button
+        retryButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
     }
 
     private func setupUI() {
@@ -149,12 +236,19 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         view.addSubview(blurEffectView)
         view.addSubview(dropdownView)
         view.addSubview(chatbotButton)
+        view.addSubview(errorLabel)
+        view.addSubview(noInternetView)
 
         blurEffectView.frame = view.bounds
         dropdownView.addSubview(closeButton)
 
         cityDetailView.addSubview(cityDetailLabel)
         cityDetailView.addSubview(closeDetailButton)
+
+        noInternetView.addSubview(noInternetLabel)
+        noInternetView.addSubview(subheadingLabel)
+        noInternetView.addSubview(retryButton)
+        noInternetView.addSubview(wifiSlashImageView)
 
         searchBar.delegate = self
         tableView.dataSource = self
@@ -243,6 +337,29 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
                 equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             chatbotButton.widthAnchor.constraint(equalToConstant: 64),
             chatbotButton.heightAnchor.constraint(equalToConstant: 64),
+
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+
+            noInternetView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noInternetView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noInternetView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            noInternetView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
+            noInternetLabel.topAnchor.constraint(equalTo: noInternetView.topAnchor, constant: 10),
+            noInternetLabel.centerXAnchor.constraint(equalTo: noInternetView.centerXAnchor),
+
+            subheadingLabel.topAnchor.constraint(equalTo: noInternetLabel.bottomAnchor, constant: 5),
+            subheadingLabel.centerXAnchor.constraint(equalTo: noInternetView.centerXAnchor),
+
+            retryButton.topAnchor.constraint(equalTo: subheadingLabel.bottomAnchor, constant: 10),
+            retryButton.centerXAnchor.constraint(equalTo: noInternetView.centerXAnchor),
+            retryButton.bottomAnchor.constraint(equalTo: noInternetView.bottomAnchor, constant: -10),
+
+            wifiSlashImageView.topAnchor.constraint(equalTo: retryButton.bottomAnchor, constant: 10),
+            wifiSlashImageView.centerXAnchor.constraint(equalTo: noInternetView.centerXAnchor),
+            wifiSlashImageView.widthAnchor.constraint(equalToConstant: 40),
+            wifiSlashImageView.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 
@@ -307,21 +424,6 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             action: #selector(backButtonTapped)
         )
         navigationItem.leftBarButtonItem = backButton
-    }
-
-    private func setupBindings() {
-        viewModel.onCitiesUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
-                self?.tableView.reloadData()
-            }
-        }
-
-        viewModel.onError = { errorMessage in
-            DispatchQueue.main.async {
-                SVProgressHUD.showError(withStatus: errorMessage)
-            }
-        }
     }
 
     private func configureSVProgressHUD() {
@@ -432,6 +534,32 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             }
         ) { _ in
             self.cityDetailView.isHidden = true
+        }
+    }
+
+    private func showNoInternetBanner() {
+        noInternetView.isHidden = false
+        searchButton.isEnabled = false
+        searchBar.isUserInteractionEnabled = false
+        viewModel.allCities = []
+        tableView.reloadData()
+        SVProgressHUD.dismiss()
+    }
+
+    private func hideNoInternetBanner() {
+        noInternetView.isHidden = true
+        searchButton.isEnabled = true
+        searchBar.isUserInteractionEnabled = true
+    }
+
+    @objc private func retryButtonTapped() {
+        if viewModel.networkMonitor.isConnected {
+            searchBar.text = "" 
+            searchButton.isEnabled = false 
+            viewModel.allCities = [] 
+            tableView.reloadData() 
+        } else {
+            SVProgressHUD.showError(withStatus: "Still no internet connection.")
         }
     }
 
