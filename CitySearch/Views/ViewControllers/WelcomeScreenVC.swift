@@ -1,13 +1,34 @@
 import UIKit
+import Lottie
 
 class WelcomeScreenVC: UIViewController {
+    private let welcomeAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "city_search")
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        return animationView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        welcomeAnimationView.play()
     }
     
     private func setupUI() {
         view.backgroundColor = .white
+        
+        // Add the Lottie animation view
+        view.addSubview(welcomeAnimationView)
+
+        // Set up constraints for the animation view
+        NSLayoutConstraint.activate([
+            welcomeAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            welcomeAnimationView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+            welcomeAnimationView.widthAnchor.constraint(equalToConstant: 200),
+            welcomeAnimationView.heightAnchor.constraint(equalToConstant: 200)
+        ])
         
         let introLabel = UILabel()
         introLabel.text = "Welcome to City Search!"
@@ -28,7 +49,7 @@ class WelcomeScreenVC: UIViewController {
         
         NSLayoutConstraint.activate([
             introLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            introLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            introLabel.topAnchor.constraint(equalTo: welcomeAnimationView.bottomAnchor, constant: 5),
             
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20),

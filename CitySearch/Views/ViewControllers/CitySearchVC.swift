@@ -3,6 +3,7 @@ import UIKit
 import Foundation
 import SwiftUI
 import Combine
+import Lottie
 
 class CitySearchVC: UIViewController, UISearchBarDelegate {
     private let viewModel = CitySearchVM(networkService: NetworkService())
@@ -39,7 +40,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(chatbotButtonTapped), for: .touchUpInside)
             return button
-        }()
+    }()
 
     private let gpsButton: UIButton = {
         let button = UIButton()
@@ -201,6 +202,15 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         return imageView
     }()
 
+    // Lottie Animation for Loading
+    private let locationAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "search_icon")
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.contentMode = .scaleAspectFit
+        animationView.isHidden = true
+        return animationView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -212,6 +222,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         // Set up closures for handling updates and errors
         viewModel.onCitiesUpdated = { [weak self] in
             DispatchQueue.main.async {
+                self?.locationAnimationView.stop()
+                self?.locationAnimationView.isHidden = true
                 SVProgressHUD.dismiss()
                 self?.tableView.reloadData()
                 self?.updateNoResultsLabelVisibility()
@@ -220,6 +232,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
 
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
+                self?.locationAnimationView.stop()
+                self?.locationAnimationView.isHidden = true
                 SVProgressHUD.showError(withStatus: errorMessage)
             }
         }
@@ -258,6 +272,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         view.addSubview(errorLabel)
         view.addSubview(noResultsView)
         view.addSubview(noInternetView)
+        view.addSubview(locationAnimationView)
 
         blurEffectView.frame = view.bounds
         dropdownView.addSubview(closeButton)
@@ -391,6 +406,12 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
 
             noResultsLabel.topAnchor.constraint(equalTo: noResultsView.topAnchor, constant: 10),
             noResultsLabel.centerXAnchor.constraint(equalTo: noResultsView.centerXAnchor),
+
+            // Set up constraints for locationAnimationView
+            locationAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            locationAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            locationAnimationView.widthAnchor.constraint(equalToConstant: 150),
+            locationAnimationView.heightAnchor.constraint(equalToConstant: 150),
         ])
     }
 
@@ -406,9 +427,10 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             searchButton.isEnabled = true
             searchButton.backgroundColor = .black
             
-            searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
+            searchTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] _ in
                 guard let self = self else { return }
-                SVProgressHUD.show(withStatus: "Searching...")
+                locationAnimationView.isHidden = false
+                locationAnimationView.play()
                 self.viewModel.fetchCities(query: searchText)
             }
         }
@@ -467,7 +489,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         guard let query = searchBar.text, !query.isEmpty else {
             return
         }
-        SVProgressHUD.show(withStatus: "Searching...")
+        locationAnimationView.isHidden = false // Show Lottie animation
+        locationAnimationView.play() // Start playing the animation
         viewModel.fetchCities(query: query)
     }
 
@@ -570,6 +593,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
 
     private func updateNoResultsLabelVisibility() {
         noResultsView.isHidden = !viewModel.allCities.isEmpty
+        tableView.isHidden = viewModel.allCities.isEmpty
     }
 
     private func showNoInternetBanner() {
@@ -590,7 +614,11 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
 
     private func retrySearchIfNeeded() {
         if let searchText = searchBar.text, !searchText.isEmpty {
-            SVProgressHUD.show(withStatus: "Searching...")
+            locationAnimationView.isHidden = false // Show Lottie animation
+            locationAnimationView.play() // Start playing the animation
+            
+            tableView.isHidden = true
+            
             viewModel.fetchCities(query: searchText)
         }
     }
@@ -615,7 +643,6 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
                 self?.hideNoInternetBanner() 
                 self?.retrySearchIfNeeded() 
             }
-
         }
     }
 
