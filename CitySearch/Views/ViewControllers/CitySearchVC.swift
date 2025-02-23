@@ -100,7 +100,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         view.layer.shadowOpacity = 0.1
         view.layer.shadowRadius = 5
         view.layer.shadowOffset = CGSize(width: 0, height: -3)
-        view.alpha = 0  // Initially hidden
+        view.alpha = 0  
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -128,9 +128,27 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
     private let errorLabel: UILabel = {
         let label = UILabel()
         label.text = "No internet connection"
-        // label.textColor = .
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isHidden = true 
+        return label
+    }()
+
+    private let noResultsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.systemGray6
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true 
+        return view
+    }()
+
+    private let noResultsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Results not found"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -169,7 +187,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         button.backgroundColor = .black
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20) 
         return button
     }()
 
@@ -196,6 +214,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
                 self?.tableView.reloadData()
+                self?.updateNoResultsLabelVisibility()
             }
         }
 
@@ -213,11 +232,11 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
                     self?.showNoInternetBanner()
                 } else {
                     self?.hideNoInternetBanner()
+                    self?.retrySearchIfNeeded() 
                 }
             }
             .store(in: &cancellables)
 
-        // Add action for retry button
         retryButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
     }
 
@@ -237,6 +256,7 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         view.addSubview(dropdownView)
         view.addSubview(chatbotButton)
         view.addSubview(errorLabel)
+        view.addSubview(noResultsView)
         view.addSubview(noInternetView)
 
         blurEffectView.frame = view.bounds
@@ -249,6 +269,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         noInternetView.addSubview(subheadingLabel)
         noInternetView.addSubview(retryButton)
         noInternetView.addSubview(wifiSlashImageView)
+
+        noResultsView.addSubview(noResultsLabel)
 
         searchBar.delegate = self
         tableView.dataSource = self
@@ -359,7 +381,16 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
             wifiSlashImageView.topAnchor.constraint(equalTo: retryButton.bottomAnchor, constant: 10),
             wifiSlashImageView.centerXAnchor.constraint(equalTo: noInternetView.centerXAnchor),
             wifiSlashImageView.widthAnchor.constraint(equalToConstant: 40),
-            wifiSlashImageView.heightAnchor.constraint(equalToConstant: 40)
+            wifiSlashImageView.heightAnchor.constraint(equalToConstant: 40),
+
+            // Constraints for noResultsView
+            noResultsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultsView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noResultsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            noResultsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
+            noResultsLabel.topAnchor.constraint(equalTo: noResultsView.topAnchor, constant: 10),
+            noResultsLabel.centerXAnchor.constraint(equalTo: noResultsView.centerXAnchor),
         ])
     }
 
@@ -537,9 +568,14 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         }
     }
 
+    private func updateNoResultsLabelVisibility() {
+        noResultsView.isHidden = !viewModel.allCities.isEmpty
+    }
+
     private func showNoInternetBanner() {
         noInternetView.isHidden = false
         searchButton.isEnabled = false
+        noResultsView.isHidden = true
         searchBar.isUserInteractionEnabled = false
         viewModel.allCities = []
         tableView.reloadData()
@@ -552,14 +588,34 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         searchBar.isUserInteractionEnabled = true
     }
 
+    private func retrySearchIfNeeded() {
+        if let searchText = searchBar.text, !searchText.isEmpty {
+            SVProgressHUD.show(withStatus: "Searching...")
+            viewModel.fetchCities(query: searchText)
+        }
+    }
+
     @objc private func retryButtonTapped() {
         if viewModel.networkMonitor.isConnected {
             searchBar.text = "" 
             searchButton.isEnabled = false 
             viewModel.allCities = [] 
             tableView.reloadData() 
+            updateNoResultsLabelVisibility() 
         } else {
-            SVProgressHUD.showError(withStatus: "Still no internet connection.")
+            checkInternetConnection()
+        }
+    }
+
+    private func checkInternetConnection() {
+        let checkInterval: TimeInterval = 2.0 
+        Timer.scheduledTimer(withTimeInterval: checkInterval, repeats: true) { [weak self] timer in
+            if self?.viewModel.networkMonitor.isConnected == true {
+                timer.invalidate() 
+                self?.hideNoInternetBanner() 
+                self?.retrySearchIfNeeded() 
+            }
+
         }
     }
 
