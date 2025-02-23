@@ -1,9 +1,12 @@
 import SVProgressHUD
 import UIKit
+import Foundation
 
 class CitySearchVC: UIViewController, UISearchBarDelegate {
     private let viewModel = CitySearchVM(networkService: NetworkService())
     private var floatingChatView: FloatingChatVC?
+    private var searchTimer: Timer?
+
 
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -244,6 +247,8 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTimer?.invalidate()
+        
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             searchButton.isEnabled = false
             searchButton.backgroundColor = .gray
@@ -252,6 +257,12 @@ class CitySearchVC: UIViewController, UISearchBarDelegate {
         } else {
             searchButton.isEnabled = true
             searchButton.backgroundColor = .black
+            
+            searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
+                guard let self = self else { return }
+                SVProgressHUD.show(withStatus: "Searching...")
+                self.viewModel.fetchCities(query: searchText)
+            }
         }
     }
     
