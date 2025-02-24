@@ -1,14 +1,31 @@
 import Foundation
+import Combine
 
-class CitySearchVM {
-    var allCities: [City] = []
+class CitySearchVM: ObservableObject {
     private let networkService: NetworkServiceProtocol
-
+    var networkMonitor = NetworkMonitor()
+    private var cancellables = Set<AnyCancellable>()
+    
+    @Published var allCities: [City] = []
+    @Published var isError: Bool = false
+    
+    // Closure properties for callbacks
     var onCitiesUpdated: (() -> Void)?
     var onError: ((String) -> Void)?
 
     init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
+        
+        // Observe network connectivity
+        networkMonitor.$isConnected
+            .sink { [weak self] isConnected in
+                if !isConnected {
+                    self?.isError = true
+                } else {
+                    self?.isError = false
+                }
+            }
+            .store(in: &cancellables)
     }
 
     var cityCount: Int {
@@ -20,38 +37,26 @@ class CitySearchVM {
     }
 
     func fetchCities(query: String) {
-        let urlString =
-            "https://secure.geonames.org/searchJSON?name_startsWith=\(query)&maxRows=10&username=keep_truckin"
-
-        networkService.fetchData(urlString: urlString) {
-            [weak self] (result: Result<CityResponse, Error>) in
+        guard networkMonitor.isConnected else {
+            // Handle offline mode, e.g., load cached data
+            return
+        }
+        
+        // Perform network request
+        networkService.fetchCities(query: query) { [weak self] result in
             switch result {
-            case .success(let cityResponse):
-                DispatchQueue.main.async {
-                    guard !cityResponse.geoNames.isEmpty else {
-                        self?.allCities = []
-                        self?.onCitiesUpdated?()
-                        self?.onError?(
-                            "No cities found for the query '\(query)'.")
-                        return
-                    }
-
-                    self?.allCities = cityResponse.geoNames
-                    self?.onCitiesUpdated?()
-                }
-
+            case .success(let cities):
+                self?.allCities = cities
+                self?.onCitiesUpdated?()
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.allCities = []
-                    self?.onCitiesUpdated?()
-                    self?.onError?(error.localizedDescription)
-                }
+                self?.isError = true
+                self?.onError?(error.localizedDescription)
             }
         }
     }
 
     func setTestCities(_ testCities: [City]) {
         allCities = testCities
-        onCitiesUpdated?()
+        onCitiesUpdated?() 
     }
 }
