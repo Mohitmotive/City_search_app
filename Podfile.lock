@@ -1,18 +1,26 @@
 PODS:
+  - lottie-ios (4.5.1)
+  - SkeletonView (1.30.4)
   - SVProgressHUD (2.3.1):
     - SVProgressHUD/Core (= 2.3.1)
   - SVProgressHUD/Core (2.3.1)
 
 DEPENDENCIES:
+  - lottie-ios
+  - SkeletonView
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
+    - SkeletonView
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  lottie-ios: 248b380fa1b97d18e792c37d90da7ab2aa0d6562
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
 
-PODFILE CHECKSUM: aa920ffb3a8501cf93b6f81ddef986d526607de1
+PODFILE CHECKSUM: cdb7da113efd6f1e45cb91f981a575b9bcd35fcb
 
 COCOAPODS: 1.16.2
